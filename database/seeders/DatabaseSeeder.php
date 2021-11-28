@@ -14,8 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
-        // factory(Author::class, 50)->create();
+        // creating 30 fake entries to the Author table
         \App\Models\Author::factory()->count(30)->create();   
     }
 }
