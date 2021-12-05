@@ -80,7 +80,7 @@ class Handler extends ExceptionHandler
             return $this->errorResponse($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        if(env('APP_DEBUG', fail)) {
+        if(env('APP_DEBUG', false)) {
             return parent::render($request, $exception);
         }
 
