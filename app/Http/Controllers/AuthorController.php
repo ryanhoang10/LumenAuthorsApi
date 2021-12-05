@@ -90,4 +90,49 @@ class AuthorController extends Controller
 
         return $this->successResponse($author);
     }
+
+    /*
+    * Obtain the full list of author form the author service
+    * @return string
+    */
+    public function obtainAuthors()
+    {
+        return $this->performRequest('GET', '/authors');
+    }
+
+    /*
+    * Create new author using the author service
+    * @return string
+    */
+    public function createAuthors($data)
+    {
+        return $this->performRequest('POST', '/authors', $data);
+    }
+
+    /*
+    * Returns single author using the author service
+    * @return string
+    */
+    public function obtainAuthor($author)
+    {
+        return $this->performRequest('POST', "/authors/{$author}");
+    }
+
+    /*
+    * Updates single author using the author service
+    * @return string
+    */
+    public function editAuthor($data, $author)
+    {
+        return $this->performRequest('PUT', "/authors/{$author}", $data);
+    }
+
+    /*
+    * Removes single author using the author service
+    * @return string
+    */
+    public function deleteAuthor($author)
+    {
+        return $this->performRequest('DELETE', "/authors/{$author}");
+    }
 }
